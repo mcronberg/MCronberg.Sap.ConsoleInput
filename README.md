@@ -133,7 +133,7 @@ public class Program
 
 ## Console
 
-If needed you can use the ConsoleBinder to collect data for the model. Bind with:
+If needed you can use the ConsoleBinder to make the user enter data for the model. Bind with:
 
 ```
 var s3 = ConsoleBinder.Bind<Settings>();
