@@ -1,4 +1,6 @@
-﻿namespace MCronberg.Sap.ConsoleInput.Core
+﻿using System;
+
+namespace MCronberg.Sap.ConsoleInput.Core
 {
     public class FileBinder
     {

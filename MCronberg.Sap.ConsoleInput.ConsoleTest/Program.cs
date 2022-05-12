@@ -3,7 +3,9 @@ namespace MCronberg.Sap.ConsoleInput.ConsoleTest
 {
     using MCronberg.Sap.ConsoleInput.Core;
 
-public class Program
+    using System.Collections.Generic;
+
+    public class Program
 {
     public static void Main(string[] args)
     {
