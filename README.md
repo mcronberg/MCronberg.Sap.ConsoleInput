@@ -6,7 +6,7 @@ MCronberg.Sap.ConsoleInput is a Simple As Possible Console Input package. It can
 - application arguments
 - input from console
 
-Please note that it's a "simple as possible" package - use it as is, as inpsiration or as a template.
+Please note that it's a "simple as possible" package - use it as is, as inpspiration or as a template.
 
 ## Model
 
