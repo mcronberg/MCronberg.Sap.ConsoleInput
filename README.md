@@ -110,13 +110,13 @@ var s2 = FileBinder.Bind<Settings, Root>("path to file");
 Given that an application is started with
 
 ```
-[app.exe] shortname1 value1 shortname2 value2 ...
+[app.exe] -shortname1 value1 -shortname2 value2 ...
 
 like
 
-[app.exe] i 1 n test
+[app.exe] -i 1 -n test
 
-where i and n are shortnames and 1 and test are values.
+where -i and -n are shortnames and 1 and test are values.
 ```
 
 and all properties in the model are decorated with the ShortName-attribute you can bind with
