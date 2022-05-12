@@ -10,7 +10,7 @@ Please note that it's a "simple as possible" package - use it as is, as inpspira
 
 ## Model
 
-To use the package you need to create a model of one of these types
+To use the package you need to create a model with one of these types
 
 - string
 - bool? (nullable)
