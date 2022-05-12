@@ -5,6 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>MCronberg</Authors>
+    <Company>MCronberg</Company>
+    <Description>Simple As Possible Console Input</Description>
+    <Copyright>Michell Cronberg</Copyright>
+    <PackageProjectUrl>https://github.com/mcronberg/MCronberg.Sap.ConsoleInput</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>console;arguments;settings</PackageTags>
   </PropertyGroup>
 
 </Project>

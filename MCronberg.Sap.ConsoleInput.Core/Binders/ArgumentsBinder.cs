@@ -14,7 +14,7 @@ namespace MCronberg.Sap.ConsoleInput.Core
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             for (int i = 0; i < args.Length; i += 2)
             {
-                arguments.Add(args[i].Trim().ToLower(), args[i + 1].Trim());
+                arguments.Add(args[i].Trim().ToLower().Replace("-", ""), args[i + 1].Trim());
             }
             var properties = t.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
             foreach (var property in properties)
