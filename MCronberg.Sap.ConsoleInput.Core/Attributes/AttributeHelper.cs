@@ -81,7 +81,7 @@ namespace MCronberg.Sap.ConsoleInput.Core
                 if (Attribute.IsDefined(property, typeof(IsRequiredAttribute)))
                 {
                     if (property.GetValue(obj) == null)
-                        throw new ApplicationException(property.Name + " is reqiured!");
+                        throw new ApplicationException(property.Name + " is required");
                 }
             }
         }
