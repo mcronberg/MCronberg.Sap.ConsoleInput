@@ -9,14 +9,28 @@ namespace MCronberg.Sap.ConsoleInput.ConsoleTest
     {
         public static void Main(string[] args)
         {
-            TestSimpleFileBinder();
-            TestSimpleFileBinderRoot();  
-            TestArgsBinder();
-            TestConsoleBinder();
+            //TestReader();
+            //TestSimpleFileBinder();
+            //TestSimpleFileBinderRoot();  
+            //TestArgsBinder();
+            //TestConsoleBinder();
+            
 
         }
 
-        private static void TestSimpleFileBinder()
+        private static void TestReader()
+        {
+            Reader reader = new Reader();
+            int a = reader.GetValue<int>("Get int", true);
+            string b = reader.GetValue<string>("Get string");
+            bool c = reader.GetValue<bool>("Get bool");
+            double d = reader.GetValue<double>("Get double");
+            DateTime e = reader.GetValue<DateTime>("Get datetime - yyyy-MM-dd");
+            var key = reader.GetConsoleKey("Get key");
+            var m = reader.Menu("Item 1", "Item 2", "Item 3");
+        }
+
+            private static void TestSimpleFileBinder()
         {
             var s = FileBinder.Bind<Settings>("appsettings.json");            
             ShowJson(s, "Simple FileBinder");

@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MCronberg.Sap.ConsoleOutput.Core;
 
 namespace MCronberg.Sap.ConsoleInput.Core
 {
     public class ConsoleBinder
     {
-        public static T Bind<T>(string preInputText = "Enter value for")
+        public static T Bind<T>(string preInputText = "Enter value for", string nullText = "use blank for null value")
         {
             try
             {
+                Writer w = new Writer();
                 var t = (T)Activator.CreateInstance(typeof(T));
                 var properties = t.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
                 foreach (var property in properties)
@@ -19,7 +17,7 @@ namespace MCronberg.Sap.ConsoleInput.Core
                     var y = Nullable.GetUnderlyingType(property.PropertyType);
                     if (y == null)
                         y = property.PropertyType;
-                    Console.Write(preInputText + " " + AttributeHelper.GetDescription(property)==null? property.Name: AttributeHelper.GetDescription(property) + " (" + y.Name + "): ");
+                    w.Write(preInputText + " " + AttributeHelper.GetDescription(property) == null ? property.Name : AttributeHelper.GetDescription(property) + " (" + y.Name + " - " + nullText + "): ");
                     string s = Console.ReadLine().Trim();
                     if (s == "")
                         s = null;

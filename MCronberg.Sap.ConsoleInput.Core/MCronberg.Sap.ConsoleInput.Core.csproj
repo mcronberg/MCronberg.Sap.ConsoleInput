@@ -12,7 +12,11 @@
     <PackageProjectUrl>https://github.com/mcronberg/MCronberg.Sap.ConsoleInput</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>console;arguments;settings</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MCronberg.Sap.ConsoleOutput.Core" Version="1.0.1" />
+  </ItemGroup>
 
 </Project>
