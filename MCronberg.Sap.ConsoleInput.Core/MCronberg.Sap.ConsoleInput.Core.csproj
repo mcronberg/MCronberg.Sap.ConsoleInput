@@ -6,13 +6,13 @@
     <Nullable>disable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>MCronberg</Authors>
-    <Company>MCronberg</Company>
+    <Company>Cronberg</Company>
     <Description>Simple As Possible Console Input</Description>
     <Copyright>Michell Cronberg</Copyright>
     <PackageProjectUrl>https://github.com/mcronberg/MCronberg.Sap.ConsoleInput</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>console;arguments;settings</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 </Project>
