@@ -62,7 +62,7 @@ namespace MCronberg.Sap.ConsoleInput.Core
                 c1 = ((int)input.KeyChar - 48) >= 1 && ((int)input.KeyChar - 48) <= (items.Length);
             } while (!c1);
             writer.NewLine();
-            return (int)input.KeyChar - 47;
+            return (int)input.KeyChar - 48;
         }
     }
 
