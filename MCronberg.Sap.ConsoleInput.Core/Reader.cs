@@ -9,7 +9,7 @@ namespace MCronberg.Sap.ConsoleInput.Core
 {
     public class Reader
     {
-
+        [Obsolete]
         public T GetValue<T>(string text = null, bool useSimpleHeader = false) {
             if (text != null)
             {
@@ -23,6 +23,97 @@ namespace MCronberg.Sap.ConsoleInput.Core
             string input = Console.ReadLine();
             return ConvertValue<T>(input);
         }
+
+        public string GetString(string text = null, bool useSimpleHeader = false, string defaultValue = null)
+        {
+            if (text != null)
+            {
+                if (defaultValue != null)
+                    text += " (default = " + defaultValue + ")";
+                Writer writer = new Writer();
+                if (useSimpleHeader)
+                {
+                    writer.SimpleHeader(text);
+                }
+                else
+                {
+                    writer.Write(text);
+                }
+            }
+            string input = Console.ReadLine();
+            if (string.IsNullOrEmpty(input))
+                return defaultValue;
+            return input;
+        }
+
+        public int GetInt(string text = null, bool useSimpleHeader = false, int? defaultValue = null)
+        {
+            if (text != null)
+            {
+                if (defaultValue != null)
+                    text += " (default = " + defaultValue + ")";
+                Writer writer = new Writer();
+                if (useSimpleHeader)
+                {
+                    writer.SimpleHeader(text);
+                }
+                else
+                {
+                    writer.Write(text);
+                }
+            }
+            string input = Console.ReadLine();
+            if (string.IsNullOrEmpty(input))
+                return defaultValue.Value;
+            return System.Convert.ToInt32(input);
+        }
+
+        public double GetDouble(string text = null, bool useSimpleHeader = false, double? defaultValue = null)
+        {
+            if (text != null)
+            {
+                if (defaultValue != null)
+                    text += " (default = " + defaultValue + ")";
+                Writer writer = new Writer();
+                if (useSimpleHeader)
+                {
+                    writer.SimpleHeader(text);
+                }
+                else
+                {
+                    writer.Write(text);
+                }
+            }
+            string input = Console.ReadLine();
+            if (string.IsNullOrEmpty(input))
+                return defaultValue.Value;
+            return System.Convert.ToDouble(input);
+        }
+
+        public bool Choice(string text = null, bool useSimpleHeader = false, bool enterDefault = false)
+        {
+            if (text != null)
+            {
+                if (enterDefault)
+                    text += " (enter = y)";
+                Writer writer = new Writer();
+                if (useSimpleHeader)
+                {
+                    writer.SimpleHeader(text);
+                }
+                else
+                {
+                    writer.Write(text);
+                }
+            }
+            var input = GetConsoleKey();
+            if (enterDefault && input == ConsoleKey.Enter)
+                return true;
+            if (input == ConsoleKey.Y)
+                return true;
+            return false;
+        }
+
 
         public ConsoleKey GetConsoleKey(string text = null)
         {
@@ -65,6 +156,4 @@ namespace MCronberg.Sap.ConsoleInput.Core
             return (int)input.KeyChar - 48;
         }
     }
-
-    
 }

@@ -21,11 +21,10 @@ namespace MCronberg.Sap.ConsoleInput.ConsoleTest
         private static void TestReader()
         {
             Reader reader = new Reader();
-            int a = reader.GetValue<int>("Get int", true);
-            string b = reader.GetValue<string>("Get string");
-            bool c = reader.GetValue<bool>("Get bool");
-            double d = reader.GetValue<double>("Get double");
-            DateTime e = reader.GetValue<DateTime>("Get datetime - yyyy-MM-dd");
+            int a = reader.GetInt("Get int", true, 1);                  // use header - default = 1
+            string b = reader.GetString("Get string", false, "*");      // * default
+            double d = reader.GetDouble("Get double");                              
+            bool c = reader.Choice("Get bool", false, true);            // enter = y
             var key = reader.GetConsoleKey("Get key");
             var m = reader.Menu("Item 1", "Item 2", "Item 3");
         }

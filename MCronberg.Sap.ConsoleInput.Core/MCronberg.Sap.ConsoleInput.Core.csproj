@@ -11,12 +11,12 @@
     <Copyright>Michell Cronberg</Copyright>
     <PackageProjectUrl>https://github.com/mcronberg/MCronberg.Sap.ConsoleInput</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>console;arguments;settings</PackageTags>
-    <Version>1.0.4</Version>
+	<PackageTags>console,input,args,write,cronberg,mcronberg</PackageTags>
+    <Version>1.0.8</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MCronberg.Sap.ConsoleOutput.Core" Version="1.0.1" />
+    <PackageReference Include="MCronberg.Sap.ConsoleOutput.Core" Version="1.0.*" />
   </ItemGroup>
 
 </Project>
