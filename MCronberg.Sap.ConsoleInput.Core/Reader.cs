@@ -155,5 +155,28 @@ namespace MCronberg.Sap.ConsoleInput.Core
             writer.NewLine();
             return (int)input.KeyChar - 48;
         }
+
+        public int MenuManyItems(params string[] items)
+        {
+            if (items == null || items.Length == 0)
+                throw new ApplicationException("Menu items missing");
+            
+            if (items.Length > 99)
+                throw new ApplicationException("Too many menu items");
+            
+            Writer writer = new Writer();
+            for (int i = 0; i < items.Length; i++)
+            {
+                writer.Write((i + 1).ToString().PadRight(2) + " " + items[i]);
+            }
+            writer.NewLine();
+            writer.Write();
+            int number = 0;
+            do
+            {
+                number = GetInt("Enter menu # (1-" + (items.Length) + "):");
+            } while (number <1 || number > items.Length);
+            return number;
+        }
     }
 }

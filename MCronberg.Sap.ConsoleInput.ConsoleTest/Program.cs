@@ -9,12 +9,12 @@ namespace MCronberg.Sap.ConsoleInput.ConsoleTest
     {
         public static void Main(string[] args)
         {
-            //TestReader();
-            //TestSimpleFileBinder();
-            //TestSimpleFileBinderRoot();  
-            //TestArgsBinder();
-            //TestConsoleBinder();
-            
+
+            TestReader();
+            TestSimpleFileBinder();
+            TestSimpleFileBinderRoot();
+            TestArgsBinder();
+            TestConsoleBinder();
 
         }
 
@@ -23,10 +23,11 @@ namespace MCronberg.Sap.ConsoleInput.ConsoleTest
             Reader reader = new Reader();
             int a = reader.GetInt("Get int", true, 1);                  // use header - default = 1
             string b = reader.GetString("Get string", false, "*");      // * default
-            double d = reader.GetDouble("Get double");                              
+            double d = reader.GetDouble("Get double");
             bool c = reader.Choice("Get bool", false, true);            // enter = y
             var key = reader.GetConsoleKey("Get key");
             var m = reader.Menu("Item 1", "Item 2", "Item 3");
+            var mm = reader.MenuManyItems("Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12");
         }
 
             private static void TestSimpleFileBinder()
